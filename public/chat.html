@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>チャットルーム</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #join-room { margin-bottom: 20px; }
+    #chat-area { display:none; margin-top:20px; }
+    #chat-box {
+      border:1px solid #ccc; padding:10px;
+      height:200px; overflow-y:auto; margin-bottom:10px;
+    }
+    input, select, button { margin:0 5px; }
+    button { cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h1>チャットルーム</h1>
+
+  <div id="join-room">
+    <input id="username" type="text" placeholder="名前を入力">
+    <select id="room-select">
+      <option value="" disabled selected>ルームを選択してください</option>
+    </select>
+    <input id="room-password" type="password" placeholder="パスワード (任意)">
+    <button id="join-btn">参加</button>
+  </div>
+
+  <div id="chat-area">
+    <div id="chat-box"></div>
+    <input id="message" type="text" placeholder="メッセージを入力">
+    <button id="send-btn">送信</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/chat.js"></script>
+</body>
+</html>

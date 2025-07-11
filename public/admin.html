@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>管理ツール</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #admin-room-list { border:1px solid #ccc; padding:10px; }
+    .room-item { margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid #eee; }
+    .room-header { display:flex; justify-content:space-between; }
+    .room-header button { background:#dc3545; color:#fff; border:none; padding:4px 8px; cursor:pointer; }
+    .kick-btn { background:#f0ad4e; color:#fff; border:none; padding:2px 6px; cursor:pointer; margin-left:8px; }
+  </style>
+</head>
+<body>
+  <h1>管理ツール</h1>
+
+  <section>
+    <h2>ルーム一覧 & ユーザー管理</h2>
+    <div id="admin-room-list">
+      <!-- ここにルーム・ユーザー一覧が動的に入る -->
+    </div>
+  </section>
+
+  <section>
+    <h2>新規ルーム作成</h2>
+    <input id="new-room-id" placeholder="ルームID">
+    <input id="new-room-pw" placeholder="パスワード (任意)">
+    <button id="add-room-btn">追加</button>
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/admin.js"></script>
+</body>
+</html>
